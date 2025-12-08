@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tierra Cruda | Cerámica, Textura y Alma</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración y Estilos de Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // Fuente Inter para un look moderno y legible
+                        sans: ['Inter', 'sans-serif'],
+                        // Fuente Serif para títulos, dando un toque clásico y artístico
+                        serif: ['Playfair Display', 'serif']
+                    },
+                    colors: {
+                        'cruda-white': '#FAF9F6',       // Blanco roto, tono papel
+                        'cruda-terracota': '#9A584F',   // Terracota profundo (acento principal)
+                        'cruda-beige': '#E8DED1',       // Beige claro/arena
+                        'cruda-dark': '#1C1C1C',        // Negro carbón (texto principal)
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Importar fuentes */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+        html { scroll-behavior: smooth; }
+
+        /* Estilo para el Parallax de TEXTURA de arcilla (simulado con un placeholder) */
+        .parallax-texture {
+            background-image: url('https://placehold.co/1200x500/E8DED1/9A584F?text=Textura+de+Arcilla');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Efecto sutil al pasar el ratón por los productos */
+        .product-card:hover .product-image {
+            filter: brightness(0.95);
+            transform: scale(1.02);
+        }
+
+        /* Estilo para el fondo del hero section para simular un color suave y cálido */
+        .hero-section {
+            background-color: #FAF9F6; /* cruda-white */
+        }
+    </style>
+</head>
+
+<body class="bg-cruda-white text-cruda-dark font-sans">
+
+    <!-- Encabezado y Navegación (Sticky) -->
+    <header class="sticky top-0 z-50 bg-cruda-white shadow-sm">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4 border-b border-cruda-beige">
+            <a href="#inicio" class="text-3xl font-serif font-bold text-cruda-terracota">Tierra Cruda</a>
+            <div class="flex space-x-6 items-center">
+                <a href="#proceso" class="text-sm font-medium hover:text-cruda-terracota transition duration-300 hidden sm:block">Proceso</a>
+                <a href="#catalogo" class="text-sm font-medium hover:text-cruda-terracota transition duration-300">Colección</a>
+                <a href="#contacto" class="text-sm font-medium hover:text-cruda-terracota transition duration-300 hidden sm:block">Contacto</a>
+                <!-- Icono de Carrito -->
+                <button aria-label="Carrito de compras" class="text-cruda-dark hover:text-cruda-terracota transition duration-300 relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                    <span class="absolute -top-2 -right-2 bg-cruda-terracota text-cruda-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 1. Sección de Inicio (Hero) -->
+        <section id="inicio" class="hero-section pt-20 pb-24 text-center">
+            <div class="max-w-6xl mx-auto px-4">
+                <h1 class="text-6xl md:text-8xl font-serif font-light mb-6 leading-none">
+                    Moldeado con <span class="font-bold text-cruda-terracota">Alma</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-cruda-dark/80 mb-10 max-w-2xl mx-auto">
+                    Piezas de cerámica únicas que celebran la imperfección y la belleza de lo hecho a mano.
+                </p>
+                <a href="#catalogo" class="inline-block px-10 py-4 bg-cruda-terracota text-cruda-white font-semibold rounded-full shadow-lg hover:bg-cruda-dark transition duration-300 transform hover:scale-105">
+                    Ver Colección de Piezas
+                </a>
+            </div>
+            
+            <!-- Imagen Hero Principal (simulando un set de vajilla minimalista) -->
+            <div class="mt-16 max-w-7xl mx-auto px-4">
+                <img src="https://placehold.co/1200x550/E8DED1/9A584F?text=Cer%C3%A1mica+Minimalista+y+Texturas" alt="Vajilla de cerámica artesanal en colores tierra" class="w-full h-auto object-cover rounded-2xl shadow-xl transition duration-500">
+            </div>
+        </section>
+
+        <!-- 2. Sección del Proceso (Enfoque en la Historia) -->
+        <section id="proceso" class="py-24 bg-cruda-dark text-cruda-white">
+            <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Texto y Principios -->
+                <div>
+                    <h2 class="text-5xl font-serif mb-6 text-cruda-terracota">El Proceso Lento</h2>
+                    <p class="text-cruda-beige/90 mb-8 leading-relaxed">
+                        En Tierra Cruda, cada objeto es un diálogo entre el artesano y la arcilla. Desde el amasado inicial hasta el horneado final, pasan semanas. Esta lentitud no es solo un método, es una filosofía: honrar el tiempo y la paciencia.
+                    </p>
+                    
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 mr-3 flex-shrink-0 text-cruda-terracota" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-cruda-beige">Materiales Puros</h4>
+                                <p class="text-sm text-cruda-beige/70">Solo arcilla de origen local y esmaltes no tóxicos.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 mr-3 flex-shrink-0 text-cruda-terracota" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15.5 13.5 1 1a2.05 2.05 0 0 0 2.9 0l.5-.5a2.05 2.05 0 0 0 0-2.9l-2-2a2.05 2.05 0 0 0-2.9 0l-.5.5"/><path d="m11.5 6.5 1 1a2.05 2.05 0 0 0 2.9 0l.5-.5a2.05 2.05 0 0 0 0-2.9l-2-2a2.05 2.05 0 0 0-2.9 0l-.5.5"/><path d="M14.5 9.5 7.5 16.5A2.5 2.5 0 0 1 5 18.5V20h1.5l7-7"/></svg>
+                            <div>
+                                <h4 class="font-semibold text-cruda-beige">Piezas Únicas</h4>
+                                <p class="text-sm text-cruda-beige/70">Pequeñas variaciones que confirman la mano del artista.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Imagen del Taller o Manos -->
+                <div class="rounded-xl overflow-hidden shadow-2xl">
+                    <img src="https://placehold.co/600x400/9A584F/E8DED1?text=Manos+en+el+Barro" alt="Manos trabajando la arcilla en un torno de cerámica" class="w-full h-auto object-cover">
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Separador de Textura (Parallax) -->
+        <div class="parallax-texture border-y-8 border-cruda-terracota/20">
+            <!-- Espacio para el efecto visual -->
+        </div>
+
+        <!-- 4. Sección del Catálogo Dinámico (Productos) -->
+        <section id="catalogo" class="py-24 bg-cruda-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-5xl font-serif text-center mb-12 text-cruda-dark">Nuestra Colección</h2>
+
+                <!-- Filtros de Categoría (Simulados) -->
+                <div id="filter-buttons" class="flex justify-center flex-wrap gap-4 mb-16">
+                    <button data-category="Todos" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-terracota text-cruda-white hover:bg-cruda-dark shadow-md" aria-pressed="true">
+                        Todo
+                    </button>
+                    <button data-category="Tazas" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
+                        Tazas & Mugs
+                    </button>
+                    <button data-category="Platos" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
+                        Platos & Bowls
+                    </button>
+                    <button data-category="Jarrones" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
+                        Jarrones & Deco
+                    </button>
+                </div>
+
+                <!-- Contenedor de Productos (Grid Dinámico) -->
+                <div id="product-grid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Las tarjetas de producto se inyectarán aquí por JavaScript -->
+                    <div class="col-span-full text-center py-10 text-cruda-terracota/70">
+                        Cargando piezas únicas...
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 5. Llamada a la Acción (CTA) -->
+        <section class="py-20 bg-cruda-beige text-center">
+            <div class="max-w-4xl mx-auto px-4">
+                <h3 class="text-4xl font-serif mb-4 text-cruda-dark">Diseña Tu Propia Vajilla</h3>
+                <p class="text-lg text-cruda-dark/80 mb-8">
+                    ¿Buscas algo específico? Trabajamos a medida para proyectos y restaurantes.
+                </p>
+                <a href="#contacto" class="inline-block px-8 py-3 bg-cruda-dark text-cruda-white font-semibold rounded-full shadow-lg hover:bg-cruda-terracota transition duration-300">
+                    Solicitar Presupuesto
+                </a>
+            </div>
+        </section>
+
+        <!-- 6. Sección de Contacto -->
+        <section id="contacto" class="py-24 bg-cruda-white">
+            <div class="max-w-5xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                
+                <!-- Formulario de Contacto -->
+                <div class="lg:order-2">
+                    <h2 class="text-4xl font-serif mb-6 text-cruda-terracota">Conecta con el Taller</h2>
+                    <form class="space-y-6 bg-cruda-beige p-8 rounded-xl shadow-xl border border-cruda-terracota/30">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-cruda-dark mb-1">Nombre</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-cruda-terracota/50 rounded-lg bg-white focus:ring-cruda-terracota focus:border-cruda-terracota transition duration-200">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-cruda-dark mb-1">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-cruda-terracota/50 rounded-lg bg-white focus:ring-cruda-terracota focus:border-cruda-terracota transition duration-200">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-cruda-dark mb-1">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 border border-cruda-terracota/50 rounded-lg bg-white focus:ring-cruda-terracota focus:border-cruda-terracota transition duration-200"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-cruda-terracota text-cruda-white font-semibold rounded-lg shadow-md hover:bg-cruda-dark transition duration-300">
+                            Enviar Consulta
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Información y Mapa (Simulado) -->
+                <div class="lg:order-1">
+                    <div class="space-y-4 mb-8">
+                        <h3 class="text-xl font-semibold">Horario del Showroom</h3>
+                        <p class="text-sm">Lunes - Viernes: 10:00 - 18:00</p>
+                        <p class="text-sm">Sábados: 10:00 - 14:00 (Cita previa)</p>
+                        
+                        <h3 class="text-xl font-semibold pt-4">Nuestra Ubicación</h3>
+                        <p class="text-sm">Calle del Alfarero, 42, 41001, Sevilla.</p>
+                    </div>
+                    <!-- Mapa Placeholder -->
+                    <div class="w-full h-64 bg-cruda-beige rounded-xl shadow-inner flex items-center justify-center border border-cruda-terracota/50">
+                        <span class="text-cruda-terracota font-bold">Mapa Ubicación (Placeholder)</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página (Footer) -->
+    <footer class="bg-cruda-dark text-cruda-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-3xl font-serif font-bold mb-4 text-cruda-terracota">Tierra Cruda</p>
+            <div class="flex flex-col md:flex-row justify-center md:space-x-8 space-y-2 md:space-y-0 mb-6 text-sm text-cruda-beige/80">
+                <a href="#" class="hover:text-cruda-terracota transition duration-300">Aviso Legal</a>
+                <a href="#" class="hover:text-cruda-terracota transition duration-300">Política de Cookies</a>
+                <a href="#" class="hover:text-cruda-terracota transition duration-300">Envíos y Devoluciones</a>
+            </div>
+
+            <div class="text-sm text-cruda-beige/50 mt-6">
+                &copy; 2025 Tierra Cruda. Cerámica Artesanal.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // === Lógica de Catálogo Dinámico ===
+        const products = [
+            // Tazas & Mugs
+            { id: 1, name: "Mug 'Arena Fina'", price: "18,00 €", category: "Tazas", description: "Acabado mate, 300ml.", imgColor: "E8DED1", imgText: "Mug+Arena" },
+            { id: 2, name: "Taza 'Líneas Carbón'", price: "22,50 €", category: "Tazas", description: "Esmalte negro con relieve.", imgColor: "1C1C1C", imgText: "Taza+Lineas" },
+            { id: 3, name: "Juego de Café (2)", price: "45,00 €", category: "Tazas", description: "Porcelana, esmalte brillante.", imgColor: "FAF9F6", imgText: "Juego+Cafe", textColor: "9A584F" },
+            // Platos & Bowls
+            { id: 4, name: "Bowl de Desayuno", price: "15,99 €", category: "Platos", description: "Terracota cruda, 14cm.", imgColor: "9A584F", imgText: "Bowl+Desayuno" },
+            { id: 5, name: "Plato Llano Grande", price: "28,00 €", category: "Platos", description: "Esmalte salmón, 28cm.", imgColor: "D79D8E", imgText: "Plato+Grande" },
+            // Jarrones & Deco
+            { id: 6, name: "Mini Jarrón 'Silencio'", price: "35,00 €", category: "Jarrones", description: "Diseño minimalista, 15cm.", imgColor: "E8DED1", imgText: "Jarrón+Silencio" },
+            { id: 7, name: "Inciensario Espiral", price: "14,50 €", category: "Jarrones", description: "Ideal para palo santo.", imgColor: "1C1C1C", imgText: "Inciensario" },
+            { id: 8, name: "Portavelas Rústico", price: "16,00 €", category: "Jarrones", description: "Arcilla con inclusiones.", imgColor: "9A584F", imgText: "Portavelas" },
+        ];
+
+        let currentCategory = "Todos"; // Categoría inicial
+
+        const productGrid = document.getElementById('product-grid');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        /**
+         * Genera el HTML de una tarjeta de producto.
+         * @param {Object} product - El objeto producto.
+         */
+        function createProductCard(product) {
+            // Determina el color del texto del placeholder basado en el color de fondo
+            const textColor = product.textColor || (product.imgColor === '1C1C1C' ? 'FAF9F6' : '1C1C1C');
+
+            return `
+                <a href="#" class="block bg-cruda-beige rounded-xl overflow-hidden shadow-lg border border-cruda-terracota/10 group product-card hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <!-- Imagen (Placeholder) -->
+                    <div class="relative overflow-hidden">
+                        <img src="https://placehold.co/400x400/${product.imgColor}/${textColor}?text=${product.imgText.replace(/ /g, '+')}" 
+                             alt="${product.name}" 
+                             class="w-full h-64 object-cover product-image transition-all duration-500">
+                    </div>
+                    
+                    <!-- Información -->
+                    <div class="p-4 text-center">
+                        <h4 class="text-xl font-serif text-cruda-dark truncate">${product.name}</h4>
+                        <p class="text-cruda-terracota font-bold mt-1 mb-3">${product.price}</p>
+                        <button class="w-full py-2 text-sm bg-cruda-dark text-cruda-white rounded-full hover:bg-cruda-terracota transition duration-300">
+                            Añadir al Carrito
+                        </button>
+                    </div>
+                </a>
+            `;
+        }
+
+        /**
+         * Filtra los productos y los renderiza en la cuadrícula.
+         * @param {string} category - La categoría a filtrar.
+         */
+        function renderProducts(category) {
+            currentCategory = category;
+            
+            // Filtrar productos
+            const filteredProducts = products.filter(product => 
+                category === "Todos" || product.category === category
+            );
+
+            // Generar HTML
+            const productHtml = filteredProducts.map(createProductCard).join('');
+
+            // Inyectar HTML
+            productGrid.innerHTML = productHtml.length > 0 
+                ? productHtml
+                : `<div class="col-span-full text-center py-10 text-xl text-cruda-terracota/70">
+                      No hay piezas en esta categoría todavía.
+                   </div>`;
+            
+            // Actualizar estado de los botones (activo/inactivo)
+            filterButtons.forEach(btn => {
+                if (btn.getAttribute('data-category') === category) {
+                    // Botón Activo: Terracota
+                    btn.classList.remove('bg-cruda-beige', 'text-cruda-dark', 'hover:bg-cruda-terracota', 'hover:text-cruda-white');
+                    btn.classList.add('bg-cruda-terracota', 'text-cruda-white', 'hover:bg-cruda-dark', 'shadow-md');
+                } else {
+                    // Botón Inactivo: Beige
+                    btn.classList.remove('bg-cruda-terracota', 'text-cruda-white', 'hover:bg-cruda-dark', 'shadow-md');
+                    btn.classList.add('bg-cruda-beige', 'text-cruda-dark', 'hover:bg-cruda-terracota', 'hover:text-cruda-white');
+                }
+            });
+            
+            // Desplazar a la sección de productos si se llama desde otra parte
+            document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Asignar eventos a los botones de filtro
+        filterButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const category = e.target.getAttribute('data-category');
+                renderProducts(category);
+            });
+        });
+
+        // Inicializar la carga de productos al cargar la página (muestra "Todos")
+        window.addEventListener('load', () => {
+            renderProducts(currentCategory);
+        });
+
+    </script>
+</body>
+</html>
