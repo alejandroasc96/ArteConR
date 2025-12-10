@@ -144,7 +144,7 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 class="text-5xl font-serif text-center mb-12 text-cruda-dark">Nuestra Colección</h2>
 
-                <!-- Filtros de Categoría (Simulados) - ACTUALIZADOS A ÉPOCAS -->
+                <!-- Filtros de Categoría  -->
                 <div id="filter-buttons" class="flex justify-center flex-wrap gap-3 mb-16">
                     <button data-category="Todos" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-terracota text-cruda-white hover:bg-cruda-dark shadow-md" aria-pressed="true">
                         Todo
@@ -176,7 +176,7 @@
             </div>
         </section>
         
-        <!-- 5. Llamada a la Acción (CTA) - Texto modificado para velas -->
+        <!-- 5. Llamada a la Acción -->
         <section class="py-20 bg-cruda-beige text-center">
             <div class="max-w-4xl mx-auto px-4">
                 <h3 class="text-4xl font-serif mb-4 text-cruda-dark">Crea tu Aroma Personalizado</h3>
@@ -189,7 +189,7 @@
             </div>
         </section>
 
-        <!-- 6. Sección de Contacto (ACTUALIZADA: Redes Sociales y WhatsApp) -->
+        <!-- 6. Sección de Contacto  -->
         <section id="contacto" class="py-24 bg-cruda-white">
             <div class="max-w-4xl mx-auto px-4 text-center">
                 
@@ -248,133 +248,111 @@
     </footer>
 
 <script>
-        // === CONFIGURACIÓN DE GITHUB PAGES ===
-        // Define tu usuario y repositorio aquí.
-        const GITHUB_USER = "alejandroasc96";
-        const GITHUB_REPO = "ArteConR";
-        
-        // URL base para el contenido RAW de GitHub
-        const GITHUB_BASE_URL = `https://github.com/${GITHUB_USER}/${GITHUB_REPO}/blob/main/img/`;
-        // Placeholder genérico de fallback si una imagen no carga
-        const FALLBACK_PLACEHOLDER = 'https://placehold.co/400x400/E8DED1/9A584F?text=Vela';
+    // === CONFIGURACIÓN ===
+    const GITHUB_USER = "alejandroasc96";
+    const GITHUB_REPO = "ArteConR";
+    // Usamos el CDN rápido (jsDelivr)
+    const GITHUB_BASE_URL = `https://cdn.jsdelivr.net/gh/${GITHUB_USER}/${GITHUB_REPO}@main/img/`;
+    const FALLBACK_PLACEHOLDER = 'https://placehold.co/400x400/E8DED1/9A584F?text=Vela';
 
-        // === Lógica de Catálogo Dinámico ===
-        const products = [
-            // He mapeado los nombres de archivo a tus productos según la lista que proporcionaste.
+    const products = [
+        // ... (Tu lista de productos se queda igual, pégala aquí) ...
+        { id: 101, name: "Vela 'Pino Nevado'", price: "25,00 €", category: "Navidad", description: "Pino, canela y naranja.", filename: "arbol_navidad.jpeg" },
+        { id: 102, name: "Vela 'Chocolate Caliente'", price: "22,00 €", category: "Navidad", description: "Vainilla y cacao intenso.", filename: "navidad2.jpeg" },
+        { id: 201, name: "Vela 'Rosa Roja'", price: "18,00 €", category: "San Valentin", description: "Rosa y un toque de sándalo.", filename: "vela1.jpeg" },
+        { id: 202, name: "Vela 'Primer Beso'", price: "20,50 €", category: "San Valentin", description: "Fresa, champán y azúcar.", filename: "vela2.jpeg" },
+        { id: 301, name: "Vela 'Jardín en Flor'", price: "28,00 €", category: "Primavera", description: "Jazmín, peonía y rocío.", filename: "vela3.jpeg" },
+        { id: 302, name: "Vela 'Té Verde'", price: "24,00 €", category: "Primavera", description: "Té verde y lima refrescante.", filename: "vela4.jpeg" },
+        { id: 401, name: "Vela 'Olas del Mar'", price: "26,50 €", category: "Verano", description: "Sales marinas y brisa oceánica.", filename: "copo_nieve.jpeg" }, 
+        { id: 402, name: "Vela 'Mojito Tropical'", price: "23,00 €", category: "Verano", description: "Menta, ron blanco y azúcar de caña.", filename: "navidad7.jpeg" },
+        { id: 501, name: "Vela 'Calabaza Especiada'", price: "29,00 €", category: "Otoño", description: "Calabaza, nuez moscada y jengibre.", filename: "hallo.jpeg" },
+        { id: 502, name: "Vela 'Hojas Secas'", price: "21,50 €", category: "Otoño", description: "Madera, pachulí y humo de leña.", filename: "vela_oto.jpeg" },
+        { id: 600, name: "Kit de Velas (Miniaturas)", price: "49,00 €", category: "Todos", description: "Miniaturas de las diferentes colecciones.", filename: "vela_oto1.jpeg" },
+    ];
+
+    const productGrid = document.getElementById('product-grid');
+    const filterButtons = document.querySelectorAll('.filter-btn');
+
+    // 1. Función para pintar TODOS los productos UNA SOLA VEZ
+    function initProducts() {
+        const productHtml = products.map(product => {
+            const imageUrl = `${GITHUB_BASE_URL}${product.filename}`; // URL optimizada
             
-            // Velas Navidad
-            { id: 101, name: "Vela 'Pino Nevado'", price: "25,00 €", category: "Navidad", description: "Pino, canela y naranja.", filename: "arbol_navidad.jpeg" },
-            { id: 102, name: "Vela 'Chocolate Caliente'", price: "22,00 €", category: "Navidad", description: "Vainilla y cacao intenso.", filename: "navidad2.jpeg" },
-            
-            // Velas San Valentín
-            { id: 201, name: "Vela 'Rosa Roja'", price: "18,00 €", category: "San Valentin", description: "Rosa y un toque de sándalo.", filename: "vela1.jpeg" },
-            { id: 202, name: "Vela 'Primer Beso'", price: "20,50 €", category: "San Valentin", description: "Fresa, champán y azúcar.", filename: "vela2.jpeg" },
-
-            // Velas Primavera
-            { id: 301, name: "Vela 'Jardín en Flor'", price: "28,00 €", category: "Primavera", description: "Jazmín, peonía y rocío.", filename: "vela3.jpeg" },
-            { id: 302, name: "Vela 'Té Verde'", price: "24,00 €", category: "Primavera", description: "Té verde y lima refrescante.", filename: "vela4.jpeg" },
-
-            // Velas Verano
-            // Nota: Usamos algunos archivos genéricos o estacionales menos obvios para las categorías con menos archivos específicos.
-            { id: 401, name: "Vela 'Olas del Mar'", price: "26,50 €", category: "Verano", description: "Sales marinas y brisa oceánica.", filename: "copo_nieve.jpeg" }, 
-            { id: 402, name: "Vela 'Mojito Tropical'", price: "23,00 €", category: "Verano", description: "Menta, ron blanco y azúcar de caña.", filename: "navidad7.jpeg" },
-            
-            // Velas Otoño
-            { id: 501, name: "Vela 'Calabaza Especiada'", price: "29,00 €", category: "Otoño", description: "Calabaza, nuez moscada y jengibre.", filename: "hallo.jpeg" },
-            { id: 502, name: "Vela 'Hojas Secas'", price: "21,50 €", category: "Otoño", description: "Madera, pachulí y humo de leña.", filename: "vela_oto.jpeg" },
-            
-            // Un producto genérico/destacado (Todos)
-            { id: 600, name: "Kit de Velas (Miniaturas)", price: "49,00 €", category: "Todos", description: "Miniaturas de las diferentes colecciones.", filename: "vela_oto1.jpeg" },
-        ];
-
-        let currentCategory = "Todos"; // Categoría inicial
-
-        const productGrid = document.getElementById('product-grid');
-        const filterButtons = document.querySelectorAll('.filter-btn');
-
-        /**
-         * Genera el HTML de una tarjeta de producto.
-         * Ahora construye la URL de la imagen de GitHub Pages.
-         * @param {Object} product - El objeto producto.
-         */
-        function createProductCard(product) {
-            // 1. Construir la URL completa de GitHub Pages
-            const imageUrl = `${GITHUB_BASE_URL}${product.filename}?raw=true`;
-
+            // Añadimos data-category al HTML para poder filtrarlo luego
             return `
-                <a href="#" class="block bg-cruda-beige rounded-xl overflow-hidden shadow-lg border border-cruda-terracota/10 group product-card hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <!-- Imagen cargada desde GitHub Pages -->
-                    <div class="relative overflow-hidden">
-                        <img src="${imageUrl}" 
-                             alt="${product.name}" 
-                             class="w-full h-64 object-cover product-image transition-all duration-500"
-                             onerror="this.onerror=null; this.src='${FALLBACK_PLACEHOLDER}';">
-                    </div>
-                    
-                    <!-- Información -->
-                    <div class="p-4 text-center">
-                        <h4 class="text-xl font-serif text-cruda-dark truncate">${product.name}</h4>
-                        <p class="text-cruda-terracota font-bold mt-1 mb-3">${product.price}</p>
-                        <button class="w-full py-2 text-sm bg-cruda-dark text-cruda-white rounded-full hover:bg-cruda-terracota transition duration-300">
-                            Añadir al Carrito
-                        </button>
-                    </div>
-                </a>
+                <div class="product-item w-full" data-category="${product.category}">
+                    <a href="#" class="block bg-cruda-beige rounded-xl overflow-hidden shadow-lg border border-cruda-terracota/10 group product-card hover:shadow-xl transition duration-300 transform hover:-translate-y-1 h-full">
+                        <div class="relative overflow-hidden h-64">
+                            <img src="${imageUrl}" 
+                                 alt="${product.name}" 
+                                 loading="lazy"
+                                 class="w-full h-full object-cover product-image transition-all duration-500"
+                                 onerror="this.onerror=null; this.src='${FALLBACK_PLACEHOLDER}';">
+                        </div>
+                        <div class="p-4 text-center">
+                            <h4 class="text-xl font-serif text-cruda-dark truncate">${product.name}</h4>
+                            <p class="text-cruda-terracota font-bold mt-1 mb-3">${product.price}</p>
+                            <button class="w-full py-2 text-sm bg-cruda-dark text-cruda-white rounded-full hover:bg-cruda-terracota transition duration-300">
+                                Añadir al Carrito
+                            </button>
+                        </div>
+                    </a>
+                </div>
             `;
-        }
+        }).join('');
+        
+        productGrid.innerHTML = productHtml;
+    }
 
-        /**
-         * Filtra los productos y los renderiza en la cuadrícula.
-         * @param {string} category - La categoría a filtrar.
-         */
-        function renderProducts(category) {
-            currentCategory = category;
-            
-            // Filtrar productos. Muestra "Todos" si la categoría es "Todos" o si el producto tiene esa categoría.
-            const filteredProducts = products.filter(product => 
-                category === "Todos" || product.category === category || product.category === "Todos"
-            );
+    // 2. Función que solo OCULTA o MUESTRA (No recarga imágenes)
+    function filterProducts(category) {
+        const items = document.querySelectorAll('.product-item');
+        let hasVisibleItems = false;
 
-            // Generar HTML
-            const productHtml = filteredProducts.map(createProductCard).join('');
-
-            // Inyectar HTML
-            productGrid.innerHTML = productHtml.length > 0 
-                ? productHtml
-                : `<div class="col-span-full text-center py-10 text-xl text-cruda-terracota/70">
-                      No hay velas disponibles para la colección de ${category}.
-                    </div>`;
-            
-            // Actualizar estado de los botones (activo/inactivo)
-            filterButtons.forEach(btn => {
-                if (btn.getAttribute('data-category') === category) {
-                    // Botón Activo: Terracota
-                    btn.classList.remove('bg-cruda-beige', 'text-cruda-dark', 'hover:bg-cruda-terracota', 'hover:text-cruda-white');
-                    btn.classList.add('bg-cruda-terracota', 'text-cruda-white', 'hover:bg-cruda-dark', 'shadow-md');
-                } else {
-                    // Botón Inactivo: Beige
-                    btn.classList.remove('bg-cruda-terracota', 'text-cruda-white', 'hover:bg-cruda-dark', 'shadow-md');
-                    btn.classList.add('bg-cruda-beige', 'text-cruda-dark', 'hover:bg-cruda-terracota', 'hover:text-cruda-white');
-                }
-            });
-            
-            // Desplazar a la sección de productos si se llama desde otra parte
-            document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        // Asignar eventos a los botones de filtro
-        filterButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const category = e.target.getAttribute('data-category');
-                renderProducts(category);
-            });
+        items.forEach(item => {
+            // Si la categoría es 'Todos' o coincide con la del item
+            if (category === 'Todos' || item.dataset.category === category || item.dataset.category === 'Todos') {
+                item.classList.remove('hidden'); // Mostrar
+                // Pequeña animación de entrada
+                item.classList.add('animate-fade-in'); 
+                hasVisibleItems = true;
+            } else {
+                item.classList.add('hidden'); // Ocultar
+            }
         });
 
-        // Inicializar la carga de productos al cargar la página (muestra "Todos")
-        window.addEventListener('load', () => {
-            renderProducts(currentCategory);
-        });
+        // Gestionar mensaje de "No hay productos" (opcional, simplificado aquí)
+        // ...
+        
+        // Actualizar botones (estilos)
+        updateButtons(category);
+    }
 
-    </script>
+    function updateButtons(activeCategory) {
+        filterButtons.forEach(btn => {
+            if (btn.getAttribute('data-category') === activeCategory) {
+                btn.classList.remove('bg-cruda-beige', 'text-cruda-dark', 'hover:bg-cruda-terracota', 'hover:text-cruda-white');
+                btn.classList.add('bg-cruda-terracota', 'text-cruda-white', 'hover:bg-cruda-dark', 'shadow-md');
+            } else {
+                btn.classList.remove('bg-cruda-terracota', 'text-cruda-white', 'hover:bg-cruda-dark', 'shadow-md');
+                btn.classList.add('bg-cruda-beige', 'text-cruda-dark', 'hover:bg-cruda-terracota', 'hover:text-cruda-white');
+            }
+        });
+    }
+
+    // Event Listeners
+    filterButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const category = e.target.getAttribute('data-category');
+            filterProducts(category);
+        });
+    });
+
+    // Inicializar
+    window.addEventListener('load', () => {
+        initProducts();     // Pinta todo
+        filterProducts('Todos'); // Muestra todo inicialmente
+    });
+</script>
 </body>
 </html>
