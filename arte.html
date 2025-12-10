@@ -79,7 +79,7 @@
     </header>
 
     <main>
-        <!-- 1. Sección de Inicio (Hero) - Texto modificado para velas -->
+        <!-- 1. Sección de Inicio -->
         <section id="inicio" class="hero-section pt-20 pb-24 text-center">
             <div class="max-w-6xl mx-auto px-4">
                 <h1 class="text-6xl md:text-8xl font-serif font-light mb-6 leading-none">
@@ -99,7 +99,7 @@
             </div>
         </section>
 
-        <!-- 2. Sección del Proceso (Enfoque en la Historia de la vela) - Texto modificado para velas -->
+        <!-- 2. Sección del Proceso (Enfoque en la Historia de la vela) -->
         <section id="proceso" class="py-24 bg-cruda-dark text-cruda-white">
             <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <!-- Texto y Principios -->
@@ -247,31 +247,44 @@
         </div>
     </footer>
 
-    <script>
+<script>
+        // === CONFIGURACIÓN DE GITHUB PAGES ===
+        // Define tu usuario y repositorio aquí.
+        const GITHUB_USER = "alejandroasc96";
+        const GITHUB_REPO = "ArteConR";
+        
+        // URL base para el contenido RAW de GitHub
+        const GITHUB_BASE_URL = `https://github.com/${GITHUB_USER}/${GITHUB_REPO}/blob/main/img/`;
+        // Placeholder genérico de fallback si una imagen no carga
+        const FALLBACK_PLACEHOLDER = 'https://placehold.co/400x400/E8DED1/9A584F?text=Vela';
+
         // === Lógica de Catálogo Dinámico ===
         const products = [
+            // He mapeado los nombres de archivo a tus productos según la lista que proporcionaste.
+            
             // Velas Navidad
-            { id: 101, name: "Vela 'Pino Nevado'", price: "25,00 €", category: "Navidad", description: "Pino, canela y naranja.", imgColor: "FAF9F6", imgText: "Vela+Pino" , textColor: "9A584F"},
-            { id: 102, name: "Vela 'Chocolate Caliente'", price: "22,00 €", category: "Navidad", description: "Vainilla y cacao intenso.", imgColor: "9A584F", imgText: "Vela+Chocolate"},
+            { id: 101, name: "Vela 'Pino Nevado'", price: "25,00 €", category: "Navidad", description: "Pino, canela y naranja.", filename: "arbol_navidad.jpeg" },
+            { id: 102, name: "Vela 'Chocolate Caliente'", price: "22,00 €", category: "Navidad", description: "Vainilla y cacao intenso.", filename: "navidad2.jpeg" },
             
             // Velas San Valentín
-            { id: 201, name: "Vela 'Rosa Roja'", price: "18,00 €", category: "San Valentin", description: "Rosa y un toque de sándalo.", imgColor: "E8DED1", imgText: "Vela+San+Valentin" },
-            { id: 202, name: "Vela 'Primer Beso'", price: "20,50 €", category: "San Valentin", description: "Fresa, champán y azúcar.", imgColor: "D79D8E", imgText: "Vela+Beso" },
+            { id: 201, name: "Vela 'Rosa Roja'", price: "18,00 €", category: "San Valentin", description: "Rosa y un toque de sándalo.", filename: "vela1.jpeg" },
+            { id: 202, name: "Vela 'Primer Beso'", price: "20,50 €", category: "San Valentin", description: "Fresa, champán y azúcar.", filename: "vela2.jpeg" },
 
             // Velas Primavera
-            { id: 301, name: "Vela 'Jardín en Flor'", price: "28,00 €", category: "Primavera", description: "Jazmín, peonía y rocío.", imgColor: "FAF9F6", imgText: "Vela+Jardin" , textColor: "9A584F"},
-            { id: 302, name: "Vela 'Té Verde'", price: "24,00 €", category: "Primavera", description: "Té verde y lima refrescante.", imgColor: "E8DED1", imgText: "Vela+Te+Verde"},
+            { id: 301, name: "Vela 'Jardín en Flor'", price: "28,00 €", category: "Primavera", description: "Jazmín, peonía y rocío.", filename: "vela3.jpeg" },
+            { id: 302, name: "Vela 'Té Verde'", price: "24,00 €", category: "Primavera", description: "Té verde y lima refrescante.", filename: "vela4.jpeg" },
 
             // Velas Verano
-            { id: 401, name: "Vela 'Olas del Mar'", price: "26,50 €", category: "Verano", description: "Sales marinas y brisa oceánica.", imgColor: "9A584F", imgText: "Vela+Mar" },
-            { id: 402, name: "Vela 'Mojito Tropical'", price: "23,00 €", category: "Verano", description: "Menta, ron blanco y azúcar de caña.", imgColor: "1C1C1C", imgText: "Vela+Mojito" },
+            // Nota: Usamos algunos archivos genéricos o estacionales menos obvios para las categorías con menos archivos específicos.
+            { id: 401, name: "Vela 'Olas del Mar'", price: "26,50 €", category: "Verano", description: "Sales marinas y brisa oceánica.", filename: "copo_nieve.jpeg" }, 
+            { id: 402, name: "Vela 'Mojito Tropical'", price: "23,00 €", category: "Verano", description: "Menta, ron blanco y azúcar de caña.", filename: "navidad7.jpeg" },
             
             // Velas Otoño
-            { id: 501, name: "Vela 'Calabaza Especiada'", price: "29,00 €", category: "Otoño", description: "Calabaza, nuez moscada y jengibre.", imgColor: "D79D8E", imgText: "Vela+Calabaza" },
-            { id: 502, name: "Vela 'Hojas Secas'", price: "21,50 €", category: "Otoño", description: "Madera, pachulí y humo de leña.", imgColor: "1C1C1C", imgText: "Vela+Otoño" },
+            { id: 501, name: "Vela 'Calabaza Especiada'", price: "29,00 €", category: "Otoño", description: "Calabaza, nuez moscada y jengibre.", filename: "hallo.jpeg" },
+            { id: 502, name: "Vela 'Hojas Secas'", price: "21,50 €", category: "Otoño", description: "Madera, pachulí y humo de leña.", filename: "vela_oto.jpeg" },
             
             // Un producto genérico/destacado (Todos)
-            { id: 600, name: "Kit de Velas (Miniaturas)", price: "49,00 €", category: "Todos", description: "Miniaturas de las diferentes colecciones.", imgColor: "FAF9F6", imgText: "Kit+Velas", textColor: "9A584F" },
+            { id: 600, name: "Kit de Velas (Miniaturas)", price: "49,00 €", category: "Todos", description: "Miniaturas de las diferentes colecciones.", filename: "vela_oto1.jpeg" },
         ];
 
         let currentCategory = "Todos"; // Categoría inicial
@@ -281,19 +294,21 @@
 
         /**
          * Genera el HTML de una tarjeta de producto.
+         * Ahora construye la URL de la imagen de GitHub Pages.
          * @param {Object} product - El objeto producto.
          */
         function createProductCard(product) {
-            // Determina el color del texto del placeholder basado en el color de fondo
-            const textColor = product.textColor || (product.imgColor === '1C1C1C' ? 'FAF9F6' : '1C1C1C');
+            // 1. Construir la URL completa de GitHub Pages
+            const imageUrl = `${GITHUB_BASE_URL}${product.filename}?raw=true`;
 
             return `
                 <a href="#" class="block bg-cruda-beige rounded-xl overflow-hidden shadow-lg border border-cruda-terracota/10 group product-card hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
-                    <!-- Imagen (Placeholder) -->
+                    <!-- Imagen cargada desde GitHub Pages -->
                     <div class="relative overflow-hidden">
-                        <img src="https://placehold.co/400x400/${product.imgColor}/${textColor}?text=${product.imgText.replace(/ /g, '+')}" 
+                        <img src="${imageUrl}" 
                              alt="${product.name}" 
-                             class="w-full h-64 object-cover product-image transition-all duration-500">
+                             class="w-full h-64 object-cover product-image transition-all duration-500"
+                             onerror="this.onerror=null; this.src='${FALLBACK_PLACEHOLDER}';">
                     </div>
                     
                     <!-- Información -->
@@ -328,7 +343,7 @@
                 ? productHtml
                 : `<div class="col-span-full text-center py-10 text-xl text-cruda-terracota/70">
                       No hay velas disponibles para la colección de ${category}.
-                   </div>`;
+                    </div>`;
             
             // Actualizar estado de los botones (activo/inactivo)
             filterButtons.forEach(btn => {
