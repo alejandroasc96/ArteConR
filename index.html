@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,7 +32,9 @@
         /* Importar fuentes */
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-        html { scroll-behavior: smooth; }
+        html {
+            scroll-behavior: smooth;
+        }
 
         /* Estilo para el Parallax de TEXTURA de cera o mecha */
         .parallax-texture {
@@ -45,7 +48,7 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         /* Efecto sutil al pasar el ratón por los productos */
         .product-card:hover .product-image {
             filter: brightness(0.95);
@@ -54,7 +57,8 @@
 
         /* Estilo para el fondo del hero section para simular un color suave y cálido */
         .hero-section {
-            background-color: #FAF9F6; /* cruda-white */
+            background-color: #FAF9F6;
+            /* cruda-white */
         }
     </style>
 </head>
@@ -63,16 +67,28 @@
 
     <!-- Encabezado y Navegación (Sticky) -->
     <header class="sticky top-0 z-50 bg-cruda-white shadow-sm">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4 border-b border-cruda-beige">
+        <nav
+            class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-4 border-b border-cruda-beige">
             <a href="#inicio" class="text-3xl font-serif font-bold text-cruda-terracota">Arte con R</a>
             <div class="flex space-x-6 items-center">
-                <a href="#proceso" class="text-sm font-medium hover:text-cruda-terracota transition duration-300 hidden sm:block">Proceso</a>
-                <a href="#catalogo" class="text-sm font-medium hover:text-cruda-terracota transition duration-300">Colección</a>
-                <a href="#contacto" class="text-sm font-medium hover:text-cruda-terracota transition duration-300 hidden sm:block">Contacto</a>
+                <a href="#proceso"
+                    class="text-sm font-medium hover:text-cruda-terracota transition duration-300 hidden sm:block">Proceso</a>
+                <a href="#catalogo"
+                    class="text-sm font-medium hover:text-cruda-terracota transition duration-300">Colección</a>
+                <a href="#contacto"
+                    class="text-sm font-medium hover:text-cruda-terracota transition duration-300 hidden sm:block">Contacto</a>
                 <!-- Icono de Carrito -->
-                <button aria-label="Carrito de compras" class="text-cruda-dark hover:text-cruda-terracota transition duration-300 relative">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-bag"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4"/><line x1="3" x2="21" y1="6" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-                    <span class="absolute -top-2 -right-2 bg-cruda-terracota text-cruda-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
+                <button aria-label="Carrito de compras"
+                    class="text-cruda-dark hover:text-cruda-terracota transition duration-300 relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-shopping-bag">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4" />
+                        <line x1="3" x2="21" y1="6" y2="6" />
+                        <path d="M16 10a4 4 0 0 1-8 0" />
+                    </svg>
+                    <span
+                        class="absolute -top-2 -right-2 bg-cruda-terracota text-cruda-white text-xs rounded-full h-5 w-5 flex items-center justify-center">2</span>
                 </button>
             </div>
         </nav>
@@ -86,16 +102,20 @@
                     Creando Atmósferas con <span class="font-bold text-cruda-terracota">Alma</span>
                 </h1>
                 <p class="text-xl md:text-2xl text-cruda-dark/80 mb-10 max-w-2xl mx-auto">
-                    Velas artesanales con cera natural y esencias únicas que transforman cualquier espacio en un refugio de calma.
+                    Velas artesanales con cera natural y esencias únicas que transforman cualquier espacio en un refugio
+                    de calma.
                 </p>
-                <a href="#catalogo" class="inline-block px-10 py-4 bg-cruda-terracota text-cruda-white font-semibold rounded-full shadow-lg hover:bg-cruda-dark transition duration-300 transform hover:scale-105">
+                <a href="#catalogo"
+                    class="inline-block px-10 py-4 bg-cruda-terracota text-cruda-white font-semibold rounded-full shadow-lg hover:bg-cruda-dark transition duration-300 transform hover:scale-105">
                     Ver Colección de Velas
                 </a>
             </div>
-            
+
             <!-- Imagen Hero Principal (simulando un set de velas aromáticas) -->
             <div class="mt-16 max-w-7xl mx-auto px-4">
-                <img src="https://github.com/alejandroasc96/ArteConR/blob/main/img/trabajo_vela.png?raw=true" alt="Trabajando en la creación de velas" class="w-full h-auto object-cover rounded-2xl shadow-xl transition duration-500">
+                <img src="https://github.com/alejandroasc96/ArteConR/blob/main/img/trabajo_vela.png?raw=true"
+                    alt="Trabajando en la creación de velas"
+                    class="w-full h-auto object-cover rounded-2xl shadow-xl transition duration-500">
             </div>
         </section>
 
@@ -106,22 +126,39 @@
                 <div>
                     <h2 class="text-5xl font-serif mb-6 text-cruda-terracota">El Proceso Artesanal</h2>
                     <p class="text-cruda-beige/90 mb-8 leading-relaxed">
-                        En Arte con R, cada vela se vierte a mano en pequeños lotes. Desde la mezcla precisa de la cera con las esencias naturales hasta la colocación de la mecha de algodón, cada paso se hace con dedicación. Esta lentitud garantiza una combustión limpia y un aroma duradero.
+                        En Arte con R, cada vela se vierte a mano en pequeños lotes. Desde la mezcla precisa de la cera
+                        con las esencias naturales hasta la colocación de la mecha de algodón, cada paso se hace con
+                        dedicación. Esta lentitud garantiza una combustión limpia y un aroma duradero.
                     </p>
-                    
+
                     <ul class="space-y-4">
                         <li class="flex items-start">
-                            <svg class="w-6 h-6 mr-3 flex-shrink-0 text-cruda-terracota" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                            <svg class="w-6 h-6 mr-3 flex-shrink-0 text-cruda-terracota"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
+                                <path d="m9 12 2 2 4-4" />
+                            </svg>
                             <div>
                                 <h4 class="font-semibold text-cruda-beige">Ceras Naturales Puras</h4>
-                                <p class="text-sm text-cruda-beige/70">Usamos cera de soja 100% natural, biodegradable y libre de parafina.</p>
+                                <p class="text-sm text-cruda-beige/70">Usamos cera de soja 100% natural, biodegradable y
+                                    libre de parafina.</p>
                             </div>
                         </li>
                         <li class="flex items-start">
-                            <svg class="w-6 h-6 mr-3 flex-shrink-0 text-cruda-terracota" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 9.5 7.5 16.5A2.5 2.5 0 0 1 5 18.5V20h1.5l7-7"/><path d="m15.5 13.5 1 1a2.05 2.05 0 0 0 2.9 0l.5-.5a2.05 2.05 0 0 0 0-2.9l-2-2a2.05 2.05 0 0 0-2.9 0l-.5.5"/><path d="m11.5 6.5 1 1a2.05 2.05 0 0 0 2.9 0l.5-.5a2.05 2.05 0 0 0 0-2.9l-2-2a2.05 2.05 0 0 0-2.9 0l-.5.5"/></svg>
+                            <svg class="w-6 h-6 mr-3 flex-shrink-0 text-cruda-terracota"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.5 9.5 7.5 16.5A2.5 2.5 0 0 1 5 18.5V20h1.5l7-7" />
+                                <path
+                                    d="m15.5 13.5 1 1a2.05 2.05 0 0 0 2.9 0l.5-.5a2.05 2.05 0 0 0 0-2.9l-2-2a2.05 2.05 0 0 0-2.9 0l-.5.5" />
+                                <path
+                                    d="m11.5 6.5 1 1a2.05 2.05 0 0 0 2.9 0l.5-.5a2.05 2.05 0 0 0 0-2.9l-2-2a2.05 2.05 0 0 0-2.9 0l-.5.5" />
+                            </svg>
                             <div>
                                 <h4 class="font-semibold text-cruda-beige">Esencias de Autor</h4>
-                                <p class="text-sm text-cruda-beige/70">Mezclas de aceites esenciales y fragancias que crean ambientes únicos.</p>
+                                <p class="text-sm text-cruda-beige/70">Mezclas de aceites esenciales y fragancias que
+                                    crean ambientes únicos.</p>
                             </div>
                         </li>
                     </ul>
@@ -129,17 +166,17 @@
 
                 <!-- Imagen del Taller o Manos -->
                 <div class="rounded-xl overflow-hidden shadow-2xl">
-                    <img src="https://cdn.jsdelivr.net/gh/alejandroasc96/ArteConR@main/img/mujer_trabajando.png" alt="Manos vertiendo cera de vela fundida en un recipiente" class="w-full h-auto object-cover">
+                    <img src="https://cdn.jsdelivr.net/gh/alejandroasc96/ArteConR@main/img/mujer_trabajando.png"
+                        alt="Manos vertiendo cera de vela fundida en un recipiente" class="w-full h-auto object-cover">
                 </div>
             </div>
         </section>
 
         <!-- 3. Separador de Textura (Parallax) -->
-        <div 
-    class="parallax-texture border-y-8 border-cruda-terracota/20 bg-fixed bg-center bg-cover bg-no-repeat min-h-[400px] w-full"
-    style="background-image: url('https://raw.githubusercontent.com/alejandroasc96/ArteConR/main/img/espacio_trabajo.png');">
-    
-    </div>
+        <div class="parallax-texture border-y-8 border-cruda-terracota/20 bg-fixed bg-center bg-cover bg-no-repeat min-h-[400px] w-full"
+            style="background-image: url('https://raw.githubusercontent.com/alejandroasc96/ArteConR/main/img/espacio_trabajo.png');">
+
+        </div>
 
         <!-- 4. Sección del Catálogo Dinámico (Productos) -->
         <section id="catalogo" class="py-24 bg-cruda-white">
@@ -148,22 +185,29 @@
 
                 <!-- Filtros de Categoría  -->
                 <div id="filter-buttons" class="flex justify-center flex-wrap gap-3 mb-16">
-                    <button data-category="Todos" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-terracota text-cruda-white hover:bg-cruda-dark shadow-md" aria-pressed="true">
+                    <button data-category="Todos"
+                        class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-terracota text-cruda-white hover:bg-cruda-dark shadow-md"
+                        aria-pressed="true">
                         Todo
                     </button>
-                    <button data-category="Navidad" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
+                    <button data-category="Navidad"
+                        class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
                         Navidad
                     </button>
-                    <button data-category="San Valentin" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
+                    <button data-category="San Valentin"
+                        class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
                         San Valentín
                     </button>
-                    <button data-category="Primavera" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
+                    <button data-category="Primavera"
+                        class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
                         Primavera
                     </button>
-                    <button data-category="Verano" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
+                    <button data-category="Verano"
+                        class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
                         Verano
                     </button>
-                    <button data-category="Otoño" class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
+                    <button data-category="Otoño"
+                        class="filter-btn px-6 py-2 rounded-full font-semibold text-sm transition duration-300 bg-cruda-beige text-cruda-dark hover:bg-cruda-terracota hover:text-cruda-white">
                         Otoño
                     </button>
                 </div>
@@ -177,7 +221,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- 5. Llamada a la Acción -->
         <section class="py-20 bg-cruda-beige text-center">
             <div class="max-w-4xl mx-auto px-4">
@@ -185,7 +229,8 @@
                 <p class="text-lg text-cruda-dark/80 mb-8">
                     ¿Buscas un aroma para un evento o tu negocio? Diseñamos velas con fragancias exclusivas a medida.
                 </p>
-                <a href="#contacto" class="inline-block px-8 py-3 bg-cruda-dark text-cruda-white font-semibold rounded-full shadow-lg hover:bg-cruda-terracota transition duration-300">
+                <a href="#contacto"
+                    class="inline-block px-8 py-3 bg-cruda-dark text-cruda-white font-semibold rounded-full shadow-lg hover:bg-cruda-terracota transition duration-300">
                     Solicitar Presupuesto
                 </a>
             </div>
@@ -194,36 +239,48 @@
         <!-- 6. Sección de Contacto  -->
         <section id="contacto" class="py-24 bg-cruda-white">
             <div class="max-w-4xl mx-auto px-4 text-center">
-                
+
                 <h2 class="text-5xl font-serif mb-4 text-cruda-dark">Conecta con Nosotros</h2>
                 <p class="text-xl text-cruda-dark/80 mb-12 max-w-2xl mx-auto">
-                    Para pedidos, consultas o encargos personalizados, escríbenos directamente. ¡Estamos aquí para ayudarte!
+                    Para pedidos, consultas o encargos personalizados, escríbenos directamente. ¡Estamos aquí para
+                    ayudarte!
                 </p>
 
                 <!-- Contenedor de Botones de Redes -->
                 <div class="flex flex-col md:flex-row justify-center gap-6">
 
                     <!-- Botón de WhatsApp -->
-                    <a href="https://wa.me/34600000000" target="_blank" rel="noopener noreferrer" 
-                       class="flex items-center justify-center w-full md:w-80 px-8 py-4 bg-green-500 text-white font-bold text-lg rounded-xl shadow-lg hover:bg-green-600 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                    <a href="https://wa.me/34600000000" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center justify-center w-full md:w-80 px-8 py-4 bg-green-500 text-white font-bold text-lg rounded-xl shadow-lg hover:bg-green-600 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
                         <!-- Icono de WhatsApp (SVG) -->
-                        <svg class="w-6 h-6 mr-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. --><path d="M380.9 97.4C339.4 51.5 283.4 24 224 24c-112.5 0-205.8 93.3-205.8 205.8c0 37.1 12.7 72.3 35.1 99.9L6.3 456c-3.1 9.4 0 20.3 7.8 27.6C23.6 492.2 38.6 496 52.8 496c1.6 0 3.2-.3 4.8-.8L150.3 444c26.7 13.7 56.6 20.9 84.8 20.9 112.5 0 205.8-93.3 205.8-205.8c0-57.8-23.3-113.8-67.9-155.6zM224 430.2c-27.4 0-54.8-7.8-78.5-22.6l-5.6-3.3-54.9 14.6 15-53.7-3.6-5.7C74.6 270.2 68.2 237.5 68.2 205.8c0-78.2 63.8-142 142-142c39.2 0 76.5 15.2 104.5 43.1c28 28 43.1 65.3 43.1 104.5c0 78.2-63.8 142-142 142z"/></svg>
+                        <svg class="w-6 h-6 mr-3 fill-current" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"><!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. -->
+                            <path
+                                d="M380.9 97.4C339.4 51.5 283.4 24 224 24c-112.5 0-205.8 93.3-205.8 205.8c0 37.1 12.7 72.3 35.1 99.9L6.3 456c-3.1 9.4 0 20.3 7.8 27.6C23.6 492.2 38.6 496 52.8 496c1.6 0 3.2-.3 4.8-.8L150.3 444c26.7 13.7 56.6 20.9 84.8 20.9 112.5 0 205.8-93.3 205.8-205.8c0-57.8-23.3-113.8-67.9-155.6zM224 430.2c-27.4 0-54.8-7.8-78.5-22.6l-5.6-3.3-54.9 14.6 15-53.7-3.6-5.7C74.6 270.2 68.2 237.5 68.2 205.8c0-78.2 63.8-142 142-142c39.2 0 76.5 15.2 104.5 43.1c28 28 43.1 65.3 43.1 104.5c0 78.2-63.8 142-142 142z" />
+                        </svg>
                         WhatsApp - ¡Escríbenos!
                     </a>
 
                     <!-- Botón de Email (NUEVO) -->
-                    <a href="mailto:info@arteconr.com" target="_blank" rel="noopener noreferrer" 
-                       class="flex items-center justify-center w-full px-8 py-4 bg-cruda-terracota text-white font-bold text-lg rounded-xl shadow-lg hover:bg-cruda-dark transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                    <a href="mailto:info@arteconr.com" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center justify-center w-full px-8 py-4 bg-cruda-terracota text-white font-bold text-lg rounded-xl shadow-lg hover:bg-cruda-dark transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
                         <!-- Icono de Correo (SVG - Envelope) -->
-                        <svg class="w-6 h-6 mr-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 312c11.6 8.7 27.2 8.7 38.8 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 26.5 21.5 48 48 48H464c26.5 0 48-21.5 48-48V176L284.8 344c-19.7 14.8-44.5 22.4-69.3 22.4s-49.6-7.5-69.3-22.4L0 176z"/></svg>
+                        <svg class="w-6 h-6 mr-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                            <path
+                                d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 312c11.6 8.7 27.2 8.7 38.8 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 26.5 21.5 48 48 48H464c26.5 0 48-21.5 48-48V176L284.8 344c-19.7 14.8-44.5 22.4-69.3 22.4s-49.6-7.5-69.3-22.4L0 176z" />
+                        </svg>
                         Correo Electrónico
                     </a>
 
                     <!-- Botón de Instagram -->
-                    <a href="https://www.instagram.com/arte_con_r" target="_blank" rel="noopener noreferrer" 
-                       class="flex items-center justify-center w-full md:w-80 px-8 py-4 bg-pink-600 text-white font-bold text-lg rounded-xl shadow-lg hover:bg-pink-700 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
+                    <a href="https://www.instagram.com/arte_con_r" target="_blank" rel="noopener noreferrer"
+                        class="flex items-center justify-center w-full md:w-80 px-8 py-4 bg-pink-600 text-white font-bold text-lg rounded-xl shadow-lg hover:bg-pink-700 transition duration-300 transform hover:scale-[1.02] active:scale-[0.98]">
                         <!-- Icono de Instagram (SVG) -->
-                        <svg class="w-6 h-6 mr-3 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. --><path d="M224.1 192.1c0-44.1 36-80.1 80.1-80.1c44.1 0 80.1 36 80.1 80.1c0 44.1-36 80.1-80.1 80.1c-44.1 0-80.1-36-80.1-80.1zm115.6-55.8a12.7 12.7 0 0 1-12.7-12.7c0-7 5.7-12.7 12.7-12.7h.5c7 0 12.7 5.7 12.7 12.7c-.5 7-5.7 12.7-12.7 12.7zM224 416c-48.4 0-51.7-1.3-70.1-2.8c-18.7-1.5-30.8-3.7-41.2-8.3c-10.4-4.5-19.4-10.8-27.1-18.5c-7.7-7.7-14-16.7-18.5-27.1c-4.6-10.4-6.8-22.5-8.3-41.2c-1.5-18.4-2.8-21.7-2.8-70.1c0-48.4 1.3-51.7 2.8-70.1c1.5-18.7 3.7-30.8 8.3-41.2c4.5-10.4 10.8-19.4 18.5-27.1c7.7-7.7 16.7-14 27.1-18.5c10.4-4.6 22.5-6.8 41.2-8.3c18.4-1.5 21.7-2.8 70.1-2.8s51.7 1.3 70.1 2.8c18.7 1.5 30.8 3.7 41.2 8.3c10.4 4.5 19.4 10.8 27.1 18.5c7.7 7.7 14 16.7 18.5 27.1c4.6 10.4 6.8 22.5 8.3 41.2c1.5 18.4 2.8 21.7 2.8 70.1s-1.3 51.7-2.8 70.1c-1.5 18.7-3.7 30.8-8.3 41.2c-4.5 10.4-10.8 19.4-18.5 27.1c-7.7 7.7-16.7 14-27.1 18.5c-10.4 4.6-22.5 6.8-41.2 8.3c-18.4 1.5-21.7 2.8-70.1 2.8zm-5.7-104c34.8 0 63 28.2 63 63s-28.2 63-63 63s-63-28.2-63-63s28.2-63 63-63zM432 192c0 2.2 0 6.6-.1 10.5c-1.4 33.4-3.6 57-9.5 73.1c-6.1 16.6-14.7 30.5-26.4 42.2c-11.7 11.7-25.6 20.3-42.2 26.4c-16.1 5.9-39.7 8.1-73.1 9.5c-3.9 .1-8.3 .1-10.5 .1s-6.6 0-10.5-.1c-33.4-1.4-57-3.6-73.1-9.5c-16.6-6.1-30.5-14.7-42.2-26.4c-11.7-11.7-20.3-25.6-26.4-42.2c-5.9-16.1-8.1-39.7-9.5-73.1c-.1-3.9-.1-8.3-.1-10.5s0-6.6 .1-10.5c1.4-33.4 3.6-57 9.5-73.1c6.1-16.6 14.7-30.5 26.4-42.2c11.7-11.7 25.6-20.3 42.2-26.4c16.1-5.9 39.7-8.1 73.1-9.5c3.9-.1 8.3-.1 10.5-.1s6.6 0 10.5 .1c33.4 1.4 57 3.6 73.1 9.5c16.6 6.1 30.5 14.7 42.2 26.4c11.7 11.7 20.3 25.6 26.4 42.2c5.9 16.1 8.1 39.7 9.5 73.1c.1 3.9 .1 8.3 .1 10.5z"/></svg>
+                        <svg class="w-6 h-6 mr-3 fill-current" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 448 512"><!--! Font Awesome Pro 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc. -->
+                            <path
+                                d="M224.1 192.1c0-44.1 36-80.1 80.1-80.1c44.1 0 80.1 36 80.1 80.1c0 44.1-36 80.1-80.1 80.1c-44.1 0-80.1-36-80.1-80.1zm115.6-55.8a12.7 12.7 0 0 1-12.7-12.7c0-7 5.7-12.7 12.7-12.7h.5c7 0 12.7 5.7 12.7 12.7c-.5 7-5.7 12.7-12.7 12.7zM224 416c-48.4 0-51.7-1.3-70.1-2.8c-18.7-1.5-30.8-3.7-41.2-8.3c-10.4-4.5-19.4-10.8-27.1-18.5c-7.7-7.7-14-16.7-18.5-27.1c-4.6-10.4-6.8-22.5-8.3-41.2c-1.5-18.4-2.8-21.7-2.8-70.1c0-48.4 1.3-51.7 2.8-70.1c1.5-18.7 3.7-30.8 8.3-41.2c4.5-10.4 10.8-19.4 18.5-27.1c7.7-7.7 16.7-14 27.1-18.5c10.4-4.6 22.5-6.8 41.2-8.3c18.4-1.5 21.7-2.8 70.1-2.8s51.7 1.3 70.1 2.8c18.7 1.5 30.8 3.7 41.2 8.3c10.4 4.5 19.4 10.8 27.1 18.5c7.7 7.7 14 16.7 18.5 27.1c4.6 10.4 6.8 22.5 8.3 41.2c1.5 18.4 2.8 21.7 2.8 70.1s-1.3 51.7-2.8 70.1c-1.5 18.7-3.7 30.8-8.3 41.2c-4.5 10.4-10.8 19.4-18.5 27.1c-7.7 7.7-16.7 14-27.1 18.5c-10.4 4.6-22.5 6.8-41.2 8.3c-18.4 1.5-21.7 2.8-70.1 2.8zm-5.7-104c34.8 0 63 28.2 63 63s-28.2 63-63 63s-63-28.2-63-63s28.2-63 63-63zM432 192c0 2.2 0 6.6-.1 10.5c-1.4 33.4-3.6 57-9.5 73.1c-6.1 16.6-14.7 30.5-26.4 42.2c-11.7 11.7-25.6 20.3-42.2 26.4c-16.1 5.9-39.7 8.1-73.1 9.5c-3.9 .1-8.3 .1-10.5 .1s-6.6 0-10.5-.1c-33.4-1.4-57-3.6-73.1-9.5c-16.6-6.1-30.5-14.7-42.2-26.4c-11.7-11.7-20.3-25.6-26.4-42.2c-5.9-16.1-8.1-39.7-9.5-73.1c-.1-3.9-.1-8.3-.1-10.5s0-6.6 .1-10.5c1.4-33.4 3.6-57 9.5-73.1c6.1-16.6 14.7-30.5 26.4-42.2c11.7-11.7 25.6-20.3 42.2-26.4c16.1-5.9 39.7-8.1 73.1-9.5c3.9-.1 8.3-.1 10.5-.1s6.6 0 10.5 .1c33.4 1.4 57 3.6 73.1 9.5c16.6 6.1 30.5 14.7 42.2 26.4c11.7 11.7 20.3 25.6 26.4 42.2c5.9 16.1 8.1 39.7 9.5 73.1c.1 3.9 .1 8.3 .1 10.5z" />
+                        </svg>
                         Instagram @arte_con_r
                     </a>
                 </div>
@@ -237,7 +294,8 @@
     <footer class="bg-cruda-dark text-cruda-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <p class="text-3xl font-serif font-bold mb-4 text-cruda-terracota">Arte con R</p>
-            <div class="flex flex-col md:flex-row justify-center md:space-x-8 space-y-2 md:space-y-0 mb-6 text-sm text-cruda-beige/80">
+            <div
+                class="flex flex-col md:flex-row justify-center md:space-x-8 space-y-2 md:space-y-0 mb-6 text-sm text-cruda-beige/80">
                 <a href="#" class="hover:text-cruda-terracota transition duration-300">Aviso Legal</a>
                 <a href="#" class="hover:text-cruda-terracota transition duration-300">Política de Cookies</a>
                 <a href="#" class="hover:text-cruda-terracota transition duration-300">Envíos y Devoluciones</a>
@@ -249,39 +307,39 @@
         </div>
     </footer>
 
-<script>
-    // === CONFIGURACIÓN ===
-    const GITHUB_USER = "alejandroasc96";
-    const GITHUB_REPO = "ArteConR";
-    // Usamos el CDN rápido (jsDelivr)
-    const GITHUB_BASE_URL = `https://cdn.jsdelivr.net/gh/${GITHUB_USER}/${GITHUB_REPO}@main/img/`;
-    const FALLBACK_PLACEHOLDER = 'https://placehold.co/400x400/E8DED1/9A584F?text=Vela';
+    <script>
+        // === CONFIGURACIÓN ===
+        const GITHUB_USER = "alejandroasc96";
+        const GITHUB_REPO = "ArteConR";
+        // Usamos el CDN rápido (jsDelivr)
+        const GITHUB_BASE_URL = `https://cdn.jsdelivr.net/gh/${GITHUB_USER}/${GITHUB_REPO}@main/img/`;
+        const FALLBACK_PLACEHOLDER = 'https://placehold.co/400x400/E8DED1/9A584F?text=Vela';
 
-    const products = [
-        // ... (Tu lista de productos se queda igual, pégala aquí) ...
-        { id: 101, name: "Vela 'Pino Nevado'", price: "25,00 €", category: "Navidad", description: "Pino, canela y naranja.", filename: "arbol_navidad.jpeg" },
-        { id: 102, name: "Vela 'Chocolate Caliente'", price: "22,00 €", category: "Navidad", description: "Vainilla y cacao intenso.", filename: "navidad2.jpeg" },
-        { id: 201, name: "Vela 'Rosa Roja'", price: "18,00 €", category: "San Valentin", description: "Rosa y un toque de sándalo.", filename: "vela1.jpeg" },
-        { id: 202, name: "Vela 'Primer Beso'", price: "20,50 €", category: "San Valentin", description: "Fresa, champán y azúcar.", filename: "vela2.jpeg" },
-        { id: 301, name: "Vela 'Jardín en Flor'", price: "28,00 €", category: "Primavera", description: "Jazmín, peonía y rocío.", filename: "vela3.jpeg" },
-        { id: 302, name: "Vela 'Té Verde'", price: "24,00 €", category: "Primavera", description: "Té verde y lima refrescante.", filename: "vela4.jpeg" },
-        { id: 401, name: "Vela 'Olas del Mar'", price: "26,50 €", category: "Verano", description: "Sales marinas y brisa oceánica.", filename: "copo_nieve.jpeg" }, 
-        { id: 402, name: "Vela 'Mojito Tropical'", price: "23,00 €", category: "Verano", description: "Menta, ron blanco y azúcar de caña.", filename: "navidad7.jpeg" },
-        { id: 501, name: "Vela 'Calabaza Especiada'", price: "29,00 €", category: "Otoño", description: "Calabaza, nuez moscada y jengibre.", filename: "hallo.jpeg" },
-        { id: 502, name: "Vela 'Hojas Secas'", price: "21,50 €", category: "Otoño", description: "Madera, pachulí y humo de leña.", filename: "vela_oto.jpeg" },
-        { id: 600, name: "Kit de Velas (Miniaturas)", price: "49,00 €", category: "Todos", description: "Miniaturas de las diferentes colecciones.", filename: "vela_oto1.jpeg" },
-    ];
+        const products = [
+            // ... (Tu lista de productos se queda igual, pégala aquí) ...
+            { id: 101, name: "Vela 'Pino Nevado'", price: "25,00 €", category: "Navidad", description: "Pino, canela y naranja.", filename: "arbol_navidad.jpeg" },
+            { id: 102, name: "Vela 'Chocolate Caliente'", price: "22,00 €", category: "Navidad", description: "Vainilla y cacao intenso.", filename: "navidad2.jpeg" },
+            { id: 201, name: "Vela 'Rosa Roja'", price: "18,00 €", category: "San Valentin", description: "Rosa y un toque de sándalo.", filename: "vela1.jpeg" },
+            { id: 202, name: "Vela 'Primer Beso'", price: "20,50 €", category: "San Valentin", description: "Fresa, champán y azúcar.", filename: "vela2.jpeg" },
+            { id: 301, name: "Vela 'Jardín en Flor'", price: "28,00 €", category: "Primavera", description: "Jazmín, peonía y rocío.", filename: "vela3.jpeg" },
+            { id: 302, name: "Vela 'Té Verde'", price: "24,00 €", category: "Primavera", description: "Té verde y lima refrescante.", filename: "vela4.jpeg" },
+            { id: 401, name: "Vela 'Olas del Mar'", price: "26,50 €", category: "Verano", description: "Sales marinas y brisa oceánica.", filename: "copo_nieve.jpeg" },
+            { id: 402, name: "Vela 'Mojito Tropical'", price: "23,00 €", category: "Verano", description: "Menta, ron blanco y azúcar de caña.", filename: "navidad7.jpeg" },
+            { id: 501, name: "Vela 'Calabaza Especiada'", price: "29,00 €", category: "Otoño", description: "Calabaza, nuez moscada y jengibre.", filename: "hallo.jpeg" },
+            { id: 502, name: "Vela 'Hojas Secas'", price: "21,50 €", category: "Otoño", description: "Madera, pachulí y humo de leña.", filename: "vela_oto.jpeg" },
+            { id: 600, name: "Kit de Velas (Miniaturas)", price: "49,00 €", category: "Todos", description: "Miniaturas de las diferentes colecciones.", filename: "vela_oto1.jpeg" },
+        ];
 
-    const productGrid = document.getElementById('product-grid');
-    const filterButtons = document.querySelectorAll('.filter-btn');
+        const productGrid = document.getElementById('product-grid');
+        const filterButtons = document.querySelectorAll('.filter-btn');
 
-    // 1. Función para pintar TODOS los productos UNA SOLA VEZ
-    function initProducts() {
-        const productHtml = products.map(product => {
-            const imageUrl = `${GITHUB_BASE_URL}${product.filename}`; // URL optimizada
-            
-            // Añadimos data-category al HTML para poder filtrarlo luego
-            return `
+        // 1. Función para pintar TODOS los productos UNA SOLA VEZ
+        function initProducts() {
+            const productHtml = products.map(product => {
+                const imageUrl = `${GITHUB_BASE_URL}${product.filename}`; // URL optimizada
+
+                // Añadimos data-category al HTML para poder filtrarlo luego
+                return `
                 <div class="product-item w-full" data-category="${product.category}">
                     <a href="#" class="block bg-cruda-beige rounded-xl overflow-hidden shadow-lg border border-cruda-terracota/10 group product-card hover:shadow-xl transition duration-300 transform hover:-translate-y-1 h-full">
                         <div class="relative overflow-hidden h-64">
@@ -301,60 +359,61 @@
                     </a>
                 </div>
             `;
-        }).join('');
-        
-        productGrid.innerHTML = productHtml;
-    }
+            }).join('');
 
-    // 2. Función que solo OCULTA o MUESTRA (No recarga imágenes)
-    function filterProducts(category) {
-        const items = document.querySelectorAll('.product-item');
-        let hasVisibleItems = false;
+            productGrid.innerHTML = productHtml;
+        }
 
-        items.forEach(item => {
-            // Si la categoría es 'Todos' o coincide con la del item
-            if (category === 'Todos' || item.dataset.category === category || item.dataset.category === 'Todos') {
-                item.classList.remove('hidden'); // Mostrar
-                // Pequeña animación de entrada
-                item.classList.add('animate-fade-in'); 
-                hasVisibleItems = true;
-            } else {
-                item.classList.add('hidden'); // Ocultar
-            }
+        // 2. Función que solo OCULTA o MUESTRA (No recarga imágenes)
+        function filterProducts(category) {
+            const items = document.querySelectorAll('.product-item');
+            let hasVisibleItems = false;
+
+            items.forEach(item => {
+                // Si la categoría es 'Todos' o coincide con la del item
+                if (category === 'Todos' || item.dataset.category === category || item.dataset.category === 'Todos') {
+                    item.classList.remove('hidden'); // Mostrar
+                    // Pequeña animación de entrada
+                    item.classList.add('animate-fade-in');
+                    hasVisibleItems = true;
+                } else {
+                    item.classList.add('hidden'); // Ocultar
+                }
+            });
+
+            // Gestionar mensaje de "No hay productos" (opcional, simplificado aquí)
+            // ...
+
+            // Actualizar botones (estilos)
+            updateButtons(category);
+        }
+
+        function updateButtons(activeCategory) {
+            filterButtons.forEach(btn => {
+                if (btn.getAttribute('data-category') === activeCategory) {
+                    btn.classList.remove('bg-cruda-beige', 'text-cruda-dark', 'hover:bg-cruda-terracota', 'hover:text-cruda-white');
+                    btn.classList.add('bg-cruda-terracota', 'text-cruda-white', 'hover:bg-cruda-dark', 'shadow-md');
+                } else {
+                    btn.classList.remove('bg-cruda-terracota', 'text-cruda-white', 'hover:bg-cruda-dark', 'shadow-md');
+                    btn.classList.add('bg-cruda-beige', 'text-cruda-dark', 'hover:bg-cruda-terracota', 'hover:text-cruda-white');
+                }
+            });
+        }
+
+        // Event Listeners
+        filterButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const category = e.target.getAttribute('data-category');
+                filterProducts(category);
+            });
         });
 
-        // Gestionar mensaje de "No hay productos" (opcional, simplificado aquí)
-        // ...
-        
-        // Actualizar botones (estilos)
-        updateButtons(category);
-    }
-
-    function updateButtons(activeCategory) {
-        filterButtons.forEach(btn => {
-            if (btn.getAttribute('data-category') === activeCategory) {
-                btn.classList.remove('bg-cruda-beige', 'text-cruda-dark', 'hover:bg-cruda-terracota', 'hover:text-cruda-white');
-                btn.classList.add('bg-cruda-terracota', 'text-cruda-white', 'hover:bg-cruda-dark', 'shadow-md');
-            } else {
-                btn.classList.remove('bg-cruda-terracota', 'text-cruda-white', 'hover:bg-cruda-dark', 'shadow-md');
-                btn.classList.add('bg-cruda-beige', 'text-cruda-dark', 'hover:bg-cruda-terracota', 'hover:text-cruda-white');
-            }
+        // Inicializar
+        window.addEventListener('load', () => {
+            initProducts();     // Pinta todo
+            filterProducts('Todos'); // Muestra todo inicialmente
         });
-    }
-
-    // Event Listeners
-    filterButtons.forEach(button => {
-        button.addEventListener('click', (e) => {
-            const category = e.target.getAttribute('data-category');
-            filterProducts(category);
-        });
-    });
-
-    // Inicializar
-    window.addEventListener('load', () => {
-        initProducts();     // Pinta todo
-        filterProducts('Todos'); // Muestra todo inicialmente
-    });
-</script>
+    </script>
 </body>
+
 </html>
